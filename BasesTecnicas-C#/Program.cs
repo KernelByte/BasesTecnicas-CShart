@@ -1,8 +1,9 @@
 ﻿// Declaracion de variables
 
-int LadoA = 0; // Asignacion de un valor inicial
-int LadoB = 0;
-int Resultado = 0;
+var LadoA = 0; // Asignacion de un valor inicial
+var LadoB = 0;
+var Resultado = 0;
+const double PI = 3.14159;
 
 /*
 
