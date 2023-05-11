@@ -1,12 +1,18 @@
 ﻿/****************  Uso de LINQ *****************************/
 
-// Creacion de la coleccion
-var frutas = new string[] { "manzana", "Pera", "Mango", "Mango Tomy", "Mango azucar" };
+using AppLinq;
 
-// Uso de la libreria LINQ
-var listaFrutas = frutas.Where(p => p.StartsWith("Mango")).ToList();
+LinqQueries linq = new LinqQueries();
 
-// Imprimir los valores de la lista
-listaFrutas.ForEach(p => Console.WriteLine(p));
+ShowValues(linq.GetBooks());
 
-/********************************************************** */
+
+// Meotodo para imprimir los valores
+void ShowValues(IEnumerable<Book> listBooks)
+{
+    Console.WriteLine("{0,-60} {1, 15} {2, 15}\n", "Titulo", "# Paginas", "Fecha publicacion");
+    foreach (var item in listBooks)
+    {
+        Console.WriteLine("{0,-60} {1, 15} {2, 15}", item.title, item.pageCount, item.publishedDate.ToShortDateString());
+    }
+}
