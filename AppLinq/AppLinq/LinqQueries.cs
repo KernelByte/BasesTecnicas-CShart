@@ -28,5 +28,21 @@ namespace AppLinq
         {
             return booksCollection;
         }
+
+        public IEnumerable<Book> GetBooksOld()
+        {
+            // Extension method
+            //return booksCollection.Where(p => p.publishedDate.Year > 2000);
+
+            return from l in booksCollection where l.publishedDate.Year > 2000 select l;
+        }
+
+        public IEnumerable<Book> GetBooksFilter()
+        {
+            // Extension method
+            //return booksCollection.Where(p => p.publishedDate.Year > 2000);
+
+            return from l in booksCollection where l.pageCount > 250 && l.title.Contains("in Action") select l;
+        }
     }
 }

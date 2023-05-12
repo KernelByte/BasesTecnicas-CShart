@@ -4,7 +4,11 @@ using AppLinq;
 
 LinqQueries linq = new LinqQueries();
 
-ShowValues(linq.GetBooks());
+// Traer todos los datos
+//ShowValues(linq.GetBooks());
+
+// Traer datos filtrados 
+ShowValues(linq.GetBooksFilter());
 
 
 // Meotodo para imprimir los valores
