@@ -63,5 +63,14 @@ namespace AppLinq
             return booksCollection.Where(p => p.categories.Contains("Python"));
         }
 
+
+        // uso del order by
+        public IEnumerable<Book> GetBooksJava()
+        {
+
+            // Contains
+            return booksCollection.Where(p => p.categories.Contains("Java")).OrderBy(p => p.title);
+        }
+
     }
 }
