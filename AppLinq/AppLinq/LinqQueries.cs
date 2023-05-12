@@ -44,5 +44,16 @@ namespace AppLinq
 
             return from l in booksCollection where l.pageCount > 250 && l.title.Contains("in Action") select l;
         }
+
+        // uso del operador ALL
+        public bool GetBooksAllAndAny()
+        {
+            // ALL
+            //return booksCollection.All(p => p.status != string.Empty);
+
+            // ANY
+            return booksCollection.Any(p => p.publishedDate.Year == 1950);
+        }
+          
     }
 }
