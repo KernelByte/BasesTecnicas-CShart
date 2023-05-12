@@ -54,6 +54,14 @@ namespace AppLinq
             // ANY
             return booksCollection.Any(p => p.publishedDate.Year == 1950);
         }
-          
+
+        // uso del operador Contains
+        public IEnumerable<Book> GetBooksPython()
+        {
+
+            // Contains
+            return booksCollection.Where(p => p.categories.Contains("Python"));
+        }
+
     }
 }

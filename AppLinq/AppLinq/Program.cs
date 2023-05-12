@@ -8,9 +8,9 @@ LinqQueries linq = new LinqQueries();
 //ShowValues(linq.GetBooks());
 
 // Traer datos filtrados 
-//ShowValues(linq.GetBooksFilter());
+ShowValues(linq.GetBooksPython());
 
-Console.WriteLine($"El resultado es: {linq.GetBooksAllAndAny()}");
+//Console.WriteLine($"El resultado es: {linq.GetBooksAllAndAny()}");
 
 
 // Meotodo para imprimir los valores
