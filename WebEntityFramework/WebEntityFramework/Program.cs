@@ -1,7 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using WebEntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<TareasContext>(p => p.UseInMemoryDatabase("TareaDB"));
 
 var app = builder.Build();
 
@@ -21,5 +26,11 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.MapGet("/dbconexion", async ([FromServices] TareasContext dbContext) =>
+{
+    dbContext.Database.EnsureCreated();
+    return Results.Ok("Base de datos en memoria: " + dbContext.Database.IsInMemory());
+});
 
 app.Run();
